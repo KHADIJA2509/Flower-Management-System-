@@ -1,30 +1,6 @@
-![](RackMultipart20240102-1-of94le_html_3f2a21e1b28b13b9.gif)
-
 # FlowerShop Mangment SYSTEM
-
-![](RackMultipart20240102-1-of94le_html_69ebe710fb917dae.gif)
-
 Database Systems
 
-CSCI305
-
-Dr.[Mona Mohamed Arafa](https://moodle.nu.edu.eg/user/view.php?id=9106&course=9546)
-
-![Shape1](RackMultipart20240102-1-of94le_html_7fa81916b44f6683.gif) ![Shape2](RackMultipart20240102-1-of94le_html_5108e5754945d34b.gif)
-
-January 1, 2024
-
-Norsen Ismail 211001833
-
-Ann Michel 211001981
-
-Sama Mohamed 211001809
-
-Reem Fayez 202001603
-
-Minnah Tariq 211001751
-
-Khadija Sherif 211001976
 
 # Table of Contents
 
