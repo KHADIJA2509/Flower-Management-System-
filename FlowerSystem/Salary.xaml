@@ -1,0 +1,47 @@
+﻿<Window x:Class="FlowerSystem.Salary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowerSystem"
+        mc:Ignorable="d"
+        Title="Salary" Height="800" Width="1500" WindowState="Maximized">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/mainimage.jpg"/>
+        </Grid.Background>
+        <DataGrid Name="dtGrid" ItemsSource="{Binding}" AutoGenerateColumns="True" IsReadOnly="True" Margin="150,160,150,200"/>
+        <TextBlock HorizontalAlignment="Left" Margin="158,87,0,0" TextWrapping="Wrap" Text="Salary " VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Foreground="#FF7354A7"/>
+
+        <Button 
+Content="Done" 
+HorizontalAlignment="Left" 
+Margin="1219,625,0,0" 
+VerticalAlignment="Top" 
+Height="37" 
+Width="106" 
+Click="Option_Click" 
+FontSize="16" 
+FontWeight="Bold" 
+Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAE91ED"/>
+                    <GradientStop Color="#FF7354A7" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+    </Grid>
+</Window>

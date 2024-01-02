@@ -1,0 +1,80 @@
+﻿<Window x:Class="FlowerSystem.Flower"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowerSystem"
+        mc:Ignorable="d"
+        Title="Flower" Height="800" Width="1500" WindowState="Maximized">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/mainimage.jpg"/>
+        </Grid.Background>
+        <Separator HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Height="63" Width="1500" Background="#FF7354A7"/>
+        <GridSplitter HorizontalAlignment="Left" Height="258" Margin="507,10,0,0" VerticalAlignment="Top" Width="1" Background="#FF7354A7" DragDelta="GridSplitter_DragDelta"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Text="Add Flower" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="67,99,0,0" TextWrapping="Wrap" Text="Flower Name" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="AflowerName" Text="" HorizontalAlignment="Left" Margin="192,98,0,0" VerticalAlignment="Top" Width="177" Height="24"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="67,142,0,0" TextWrapping="Wrap" Text="Quantity " VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" x:Name="AflowerQ" Margin="192,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="67,186,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" x:Name="AflowerPrice" Margin="192,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+
+        <Button Click="addFlower_Click" Content="Add" HorizontalAlignment="Left" Margin="406,179,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Foreground="White"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="406,212,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Click="Button_Click" Foreground="White" RenderTransformOrigin="0.5,0.5"/>
+        <GridSplitter HorizontalAlignment="Left" Height="258" Margin="997,10,0,0" VerticalAlignment="Top" Width="1" Background="#FF7354A7"/>
+        <TextBlock HorizontalAlignment="Left" Margin="522,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Text="Remove Flower" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="560,118,0,0" TextWrapping="Wrap" Text="Flower ID" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="AflowerIdToDelete" HorizontalAlignment="Left" Margin="681,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+        <Button Content="Remove" Click="deleteFlower_Click" HorizontalAlignment="Left" Margin="894,179,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Foreground="White"/>
+        <Button x:Name="removeClear" Content="Cancel" HorizontalAlignment="Left" Margin="894,212,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Foreground="White" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1017,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Text="Update Flower" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1054,99,0,0" TextWrapping="Wrap" Text="Flower Name" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" x:Name="UflowerName" Margin="1179,98,0,0" VerticalAlignment="Top" Width="177" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1054,142,0,0" TextWrapping="Wrap" Text="Quantity " VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" x:Name="UflowerQ" Margin="1179,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1054,186,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" x:Name="UflowerPrice" Margin="1179,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+        <DataGrid Name="dtGrid" ItemsSource="{Binding}" AutoGenerateColumns="True" IsReadOnly="True" Margin="150,350,150,150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Text="Table of all Flowers" Width="201" FontWeight="Bold"/>
+
+        <Button 
+Content="Done" 
+HorizontalAlignment="Left" 
+Margin="1214,675,0,0" 
+VerticalAlignment="Top" 
+Height="37" 
+Width="106" 
+Click="Option_Click" 
+FontSize="16" 
+FontWeight="Bold" 
+Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAE91ED"/>
+                    <GradientStop Color="#FF7354A7" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBox x:Name="AflowerID" HorizontalAlignment="Left" Margin="192,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="67,224,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="UflowerID" HorizontalAlignment="Left" Margin="1179,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1054,227,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="16"/>
+        <Button Content="Update" Click="updateFlower_Click" HorizontalAlignment="Left" Margin="1382,194,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Foreground="White"/>
+        <Button  Content="Cancel" HorizontalAlignment="Left" Margin="1382,227,0,0" VerticalAlignment="Top" Background="#FF7354A7" Height="24" Width="78" Foreground="White" RenderTransformOrigin="0.5,0.5"/>
+
+
+    </Grid>
+</Window>
