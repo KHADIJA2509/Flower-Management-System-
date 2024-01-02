@@ -1,4 +1,4 @@
-# FlowerShop Mangment SYSTEM
+# FlowerShop Management SYSTEM
 Database Systems
 
 
@@ -54,14 +54,14 @@ Database Systems
 
 [7. Source Code 21](#_Toc155127172)
 
-# 1.Project description
+# 1. Project description
 
 The Flower Shop Management System is designed to improve the way flower shops handle their operations. The system aims to adeptly manage the shop's items, staff, customer interactions, order processing, and billing. Through a centralized database, it incorporates various modules that facilitate the effective functioning of each business aspect, ensuring efficiency and customer satisfaction.
 
   1.
 ## System Modules
 
-- Company Module: This module acts as the core for managing company related data as managing shop details.
+- Company Module: This module acts as the core for managing company-related data, such as managing shop details.
 - Items Module: Centrally manages all inventory related to floral products and accessories.
 - Staff Module: This module focuses on the management of employee data.
 - Order Module: Manages the entire order lifecycle from placement to delivery.
@@ -79,12 +79,12 @@ The Flower Shop Management System is designed to improve the way flower shops ha
 1.
 # Entity Relationship Diagram (ERD)
 
-![Shape3](RackMultipart20240102-1-of94le_html_a45b8487d82637a7.gif)
+![ERD](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/c33158d3-b00a-490e-b797-43db0afedfd7)
 
 ## 2.1 System Modules and their attributes
 
 - Entity: Company
-  - Attributes: Name, Company ID (primary key) , Information, Address, and Contact Number
+  - Attributes: Name, Company ID (primary key), Information, Address, and Contact Number
 - Entity: Items
   - Attributes: Item Name, Price, Quantity, Description, Item ID (primary key), and Type
 - Entity: Staff
@@ -102,12 +102,12 @@ The Flower Shop Management System is designed to improve the way flower shops ha
 
 - Specialization of Items: Items are specialized into gifts, flowers, and accessories with partial overlap, understanding that one item can belong to multiple categories.
 - Items to Company: A mandatory one-to-many relationship exists where one company offers multiple items.
-- Items to Order "Offers": A many-to-many relationship exists, indicating that an order must contain many items and many items can appear in many orders.
+- Items to Order "Offers": A many-to-many relationship exists, indicating that an order must contain many items, and many items can appear in many orders.
 - Staff to Company "Have": There is a mandatory one-to-many relationship indicating a single company employs many staff members.
 - Specialization of Staff: Disjoint total specialization relationship within the Staff entity, with subtypes: Salesman, Cashier, Delivery, Manager, Owner
 - Cashier to Billing "Bill Process": A mandatory one-to-many relation signifying each billing is processed by one cashier, and one cashier can process multiple billings.
-- Delivery to Order "Deliver": One-to-one relationship between Order and Delivery indicates that each order can be delivered by one delivery staff, and one delivery staff can handle multiple orders.
-- Manager to Company "Manage": A mandatory one-to-one relationship indicated that Manager must have one company, and company must have one manager.
+- Delivery to Order "Deliver": The one-to-one relationship between Order and Delivery indicates that each order can be delivered by one delivery staff, and one delivery staff can handle multiple orders.
+- Manager to Company "Manage": A mandatory one-to-one relationship indicates that the Manager must have one company, and the company must have one manager.
 - Associative Entity "Transaction": This associative entity represents the process that involves orders, customers, billing, and complaints.
 
 - There is a one-to-one mandatory relationship between the transaction and each order, billing, and complaint, denoting that each transaction must include these entities.
@@ -115,7 +115,7 @@ The Flower Shop Management System is designed to improve the way flower shops ha
 
 # 3.Relational Database
 
-![Picture 1](RackMultipart20240102-1-of94le_html_704206172362b5d0.gif)
+![Schema](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/e67e201b-7a4e-4c0a-9ced-2d43c168ad1b)
 
 # 4. List of used tools
 
@@ -128,109 +128,101 @@ The Flower Shop Management System is designed to improve the way flower shops ha
 
 ## 5.1 Create Tables
 
-![Picture 3](RackMultipart20240102-1-of94le_html_a151519659c65557.gif)
+![Create Tables 1](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/39586a9e-43af-448f-8e1b-3b441b28e582)
 
 - Create "Order" table which includes Order ID integer as primary key, Order type varchar, Order date, order time, Payment status varchar, Status varchar, Amount decimal, and Notes text.
 
-- Create "Billing" table which includes Bill Id integer as primary key, Bill type varchar, Bill date, Time, and Amount decimal.
-- Create "Complain" table which includes Complaint ID integer as primary key, Complain title varchar, Description text, Complain date, Complain time.
+- Create "Billing" table which includes the Bill ID integer as primary key, Bill type varchar, Bill date, Time, and Amount decimal.
+- Create "Complain" table which includes the Complaint ID integer as primary key, Complain title varchar, Description text, Complain date, Complain time.
 
-![Picture 4](RackMultipart20240102-1-of94le_html_f5241333a3ed516.gif)
+![Create Tables 2](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/167c7fb0-37c1-49f0-a077-e15421fef20a)
 
 - Create "Customer" table which includes Customer ID integer as primary key, First name varchar, Second name varchar, Gender varchar, Birthdate date, Phone number bigint, Email varchar, Address varchar, Delivered Order integer, and Canceled Order integer.
-- Create "Company" table which includes Company ID integer as primary key, Name varchar, About varchar, Email varchar, Address varchar, and Phone number integer.
-- Create "Items" table which includes Item Id integer as primary key, Type varchar, Item name varchar, Price integer, Quantity integer, and Description text.
+- Create "Company" table which includes the Company ID integer as primary key, Name varchar, About varchar, Email varchar, Address varchar, and Phone number integer.
+- Create "Items" table which includes the Item ID integer as primary key, Type varchar, Item name varchar, Price integer, Quantity integer, and Description text.
 - Create "Flowers" table which includes Fresh flowers varchar, Artificial flowers varchar, and foreign key (Item ID) references "Item" table.
 
-![Picture 5](RackMultipart20240102-1-of94le_html_72b012aa661fb410.gif)
+![Create Tables 3](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/eb3996a2-7456-4d65-b0a0-39a6f943fada)
 
-![Shape4](RackMultipart20240102-1-of94le_html_9a9d0190160120aa.gif)
-
-![Shape6](RackMultipart20240102-1-of94le_html_cfc64c8babd58b9f.gif) ![Shape5](RackMultipart20240102-1-of94le_html_e1bebf0a3e38976d.gif)
-
-- Create "Decorative Accessories" table which includes foreign key (Item ID) references "Item" table.
+- Create "Decorative Accessories" table which includes a foreign key (Item ID) referencing "Item" table.
 
 - Create "Staff" table which includes Staff ID integer as primary key, First name varchar, Second name varchar, Gender varchar, Birthdate date, Phone number bigint, Email varchar, Address varchar, Job title varchar, and Salary decimal.
-- Create "Owner" table which includes Owner ID integer as a primary key, and foreign key (Owner ID) references "Staff" table.
-- Create "Delivery" table which includes Delivery ID integer as primary key, Delivered orders integer, Undelivered orders integer, and foreign key (Delivery ID) references "Staff" table.
-- Create "Cashier" table which includes Cashier ID integer as a primary key, and foreign key (Cashier ID) references "Staff" table.
+- Create "Owner" table which includes the Owner ID integer as a primary key, and a foreign key (Owner ID) references "Staff" table.
+- Create "Delivery" table which includes the Delivery ID integer as the primary key, Delivered orders integer, Undelivered orders integer, and foreign key (Delivery ID) references "Staff" table.
+- Create "Cashier" table which includes the Cashier ID integer as a primary key, and a foreign key (Cashier ID) references "Staff" table.
 
-![Picture 6](RackMultipart20240102-1-of94le_html_5d165225cbb248e0.gif)
+![Create Tables 4](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/ac1b193b-9753-4a29-b794-43664116e14e)
 
-- Create "Manager" table which includes Manager ID integer as a primary key, and foreign key (Manager ID) references "Staff" table.
-- Create "Salesman" table which includes Salesman ID integer as a primary key, Target float, and foreign key (Salesman ID) references "Staff" table.
-
-##
+- Create "Manager" table which includes the Manager ID integer as a primary key, and a foreign key (Manager ID) references "Staff" table.
+- Create "Salesman" table which includes a Salesman ID integer as a primary key, Target float, and foreign key (Salesman ID) references "Staff" table.
 
 ## 5.2 Inserts
 
-![Picture 8](RackMultipart20240102-1-of94le_html_ec50635c1fde2f81.gif)
+![Insert 1](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/788acf90-ccbe-4539-b096-7a27c9e94526)
 
-![Picture 9](RackMultipart20240102-1-of94le_html_208d5c568db1f666.gif)
+![Insert 2](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/11ee7d26-3456-498e-b257-5e75e66ac315)
 
-![Picture 10](RackMultipart20240102-1-of94le_html_5c831f87ad48ffb7.gif)
+![Insert 3](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/4d7994d6-0ec6-445f-9074-0736b33b0217)
 
-- Inserting Information into the database we have created.
+- Insert information into the database we have created.
 
 **5.3 Queries**
 
-![Picture 1](RackMultipart20240102-1-of94le_html_12d675efb4d816ca.gif)
+![Queries 1](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/ae105285-cc92-41fe-b114-298d8e7b2094)
 
-![Picture 1](RackMultipart20240102-1-of94le_html_757afee700e82067.gif)
+![Queries 2](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/70feadf2-48c4-4056-b84a-f5ded710ff2d)
 
-![Picture 1](RackMultipart20240102-1-of94le_html_11b5dde61a44509e.gif)
+![Queries 3](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/71848a21-0149-452b-b0c2-a9a05eefcff0)
 
 # 6. GUI
 
 ## 6.1 Login Page
 
-![](RackMultipart20240102-1-of94le_html_94910ab998340d01.jpg)
+![Login Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/7abffbc4-0cf4-40fc-a3f4-16719af89469)
 
 ## 6.2 Options of the system Page
 
-![](RackMultipart20240102-1-of94le_html_6e1762005f91ff82.jpg)
+![Options of the system Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/6515a319-786e-4587-950c-cf1403678961)
 
 ## 6.3 Add Company Page
 
-![](RackMultipart20240102-1-of94le_html_4ab40253a1fe9ed3.jpg)
+![Add Company Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/1b555b9c-16bd-4cdc-9aa2-40aab950d90a)
 
 ## 6.4 Add/Remove/Update/View Flowers Page
 
-![](RackMultipart20240102-1-of94le_html_502d79ec176e276d.jpg)
+![Add-Remove-Update-View Flowers Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/d0852063-fd5c-436c-9474-ec78401fbba1)
 
 ## 6.5 Bills Page
 
-![](RackMultipart20240102-1-of94le_html_d82f0de4fed80142.jpg)
+![Bills Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/5bd3c554-6275-4742-8bd7-5298e3e9b91a)
 
 ## 6.6 Salary Page
 
-![](RackMultipart20240102-1-of94le_html_b075e3a1b140a8fe.jpg)
+![Salary Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/ca9a19d3-eec4-4700-9e5c-00bfc9b7f454)
 
-## 6.7 Search/View customers Page
+## 6.7 Search/View Customers Page
 
-![](RackMultipart20240102-1-of94le_html_5702eeffb75bec92.jpg)
-
-##
+![Search-View Customers Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/c31af01a-3a81-439f-ad5e-68f1ecc6feb4)
 
 ## 6.8 Search/View Delivery Page
 
-![](RackMultipart20240102-1-of94le_html_e8a0c4f8bfdeecbc.jpg)
+![Search-View Delivery Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/5392a71f-a963-47e6-9f26-3f5a95360e21)
 
 ## 6.9 Search/View Employees Page
 
-![](RackMultipart20240102-1-of94le_html_3b3dba8b6850c59f.jpg)
+![Search-View Employees Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/5ef7f9b7-cf6d-496c-b395-730eb0a8c9b8)
 
 ## 6.10 Complains Page
 
-![](RackMultipart20240102-1-of94le_html_5a0bc18b78b6cd42.jpg)
+![Complains Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/c8c21e49-33b5-407c-9c36-53dab8ce6279)
 
 ## 6.11 Add Employee Page
 
-![](RackMultipart20240102-1-of94le_html_eca7c8e1d171affe.jpg)
+![Add Employee Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/278482eb-ad55-470e-9738-6ecf9ab1dceb)
 
 ## 6.12 Add Customer Page
 
-![](RackMultipart20240102-1-of94le_html_f05245feac895a70.jpg)
+![Add Customer Page](https://github.com/KHADIJA2509/Flower-Management-System-/assets/100092835/fca90d66-d131-480e-b814-a703734015a1)
 
 # 7. Source Code
 
